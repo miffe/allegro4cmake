@@ -1,0 +1,6 @@
+[
+    {
+        "name": "DJGPP",
+        "toolchainFile": ".vscode/toolchain-djgpp.cmake" 
+    }
+]
