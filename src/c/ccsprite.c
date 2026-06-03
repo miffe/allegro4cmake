@@ -26,7 +26,7 @@
 COMPILED_SPRITE *get_compiled_sprite(BITMAP *bitmap, int planar)
 {
    ASSERT(bitmap);
-   return get_rle_sprite(bitmap);
+   return (COMPILED_SPRITE *)get_rle_sprite(bitmap);
 }
 
 
@@ -37,7 +37,7 @@ COMPILED_SPRITE *get_compiled_sprite(BITMAP *bitmap, int planar)
 void destroy_compiled_sprite(COMPILED_SPRITE *sprite)
 {
    ASSERT(sprite);
-   destroy_rle_sprite(sprite);
+   destroy_rle_sprite((RLE_SPRITE *)sprite);
 }
 
 
@@ -50,6 +50,6 @@ void draw_compiled_sprite(BITMAP *dst, AL_CONST COMPILED_SPRITE *src, int x, int
 {
    ASSERT(dst);
    ASSERT(src);
-   draw_rle_sprite(dst, (COMPILED_SPRITE *)src, x, y);
+   draw_rle_sprite(dst, (RLE_SPRITE *)src, x, y);
 }
 
