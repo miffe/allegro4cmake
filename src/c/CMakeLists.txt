@@ -18,7 +18,7 @@ set(ALLEG_C_SRC
     cgfx8.c
     cgfx.h
     cmisc.c
-    cmiscs.s
+    #cmiscs.s # Implemented in imisc.s, not sure which is best
     cscan15.c
     cscan16.c
     cscan24.c
@@ -41,4 +41,4 @@ set(ALLEG_C_SRC
 )
 
 add_library(alleg_c OBJECT ${ALLEG_C_SRC})
-target_include_directories(alleg_c PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(alleg_c PRIVATE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)

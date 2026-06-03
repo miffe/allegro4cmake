@@ -45,4 +45,4 @@ set(ALLEG_DOS_SRC
 )
 
 add_library(alleg_dos OBJECT ${ALLEG_DOS_SRC})
-target_include_directories(alleg_dos PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(alleg_dos PRIVATE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)

@@ -79,8 +79,7 @@
             static inline type name args code
       #else
          #define AL_INLINE(type, name, args, code)    \
-            extern __inline__ type name args;         \
-            extern __inline__ type name args code
+            static __inline__ type name args code
       #endif
    #endif
 

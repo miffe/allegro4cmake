@@ -70,7 +70,12 @@ set(ALLEG_SRC
 add_subdirectory(c)
 add_subdirectory(dos)
 add_subdirectory(i386)
+add_subdirectory(misc)
 
-add_library(alleg STATIC ${ALLEG_SRC} $<TARGET_OBJECTS:alleg_c> $<TARGET_OBJECTS:alleg_dos> $<TARGET_OBJECTS:alleg_i386>)
-target_include_directories(alleg PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include)
+add_library(alleg STATIC ${ALLEG_SRC} $<TARGET_OBJECTS:alleg_c> $<TARGET_OBJECTS:alleg_dos> $<TARGET_OBJECTS:alleg_i386> $<TARGET_OBJECTS:alleg_misc>)
+target_include_directories(alleg PUBLIC "${PROJECT_SOURCE_DIR}/include" PRIVATE "${PROJECT_SOURCE_DIR}")
+export(TARGETS alleg NAMESPACE allegro4::)
+add_library(allegro4::alleg ALIAS alleg)
 
+add_executable(testlink testlink.c)
+target_link_libraries(testlink PRIVATE allegro4::alleg)

@@ -1,5 +1,4 @@
 set(ALLEG_I386_SRC
-    asmdef.c
     iblit16.s
     iblit24.s
     iblit32.s
@@ -26,4 +25,4 @@ set(ALLEG_I386_SRC
 )
 
 add_library(alleg_i386 OBJECT ${ALLEG_I386_SRC})
-target_include_directories(alleg_i386 PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/include)
+target_include_directories(alleg_i386 PRIVATE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
