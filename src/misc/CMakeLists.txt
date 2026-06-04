@@ -17,4 +17,5 @@ set(ALLEG_MISC_SRC
 )
 
 add_library(alleg_misc OBJECT ${ALLEG_MISC_SRC})
+set_property(TARGET alleg_misc PROPERTY INTERPROCEDURAL_OPTIMIZATION ${LTO_SUPPORTED})
 target_include_directories(alleg_misc PRIVATE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)

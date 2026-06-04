@@ -4,6 +4,17 @@ project(allegro)
 
 enable_language(C CXX ASM)
 
+if(CMAKE_BUILD_TYPE STREQUAL "Release" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo" OR CMAKE_BUILD_TYPE STREQUAL "MinSizeRel")
+    set(RELEASE_BUILD ON)
+else()
+    set(RELEASE_BUILD OFF)
+endif()
+
+if(RELEASE_BUILD)
+    include(CheckIPOSupported)
+    check_ipo_supported(RESULT LTO_SUPPORTED)
+endif()
+
 # TODO: Generate the obj/djgpp/asmcapa.h file
 add_custom_command(
     OUTPUT ${CMAKE_SOURCE_DIR}/obj/djgpp/asmcapa.h

@@ -45,4 +45,5 @@ set(ALLEG_DOS_SRC
 )
 
 add_library(alleg_dos OBJECT ${ALLEG_DOS_SRC})
+set_property(TARGET alleg_dos PROPERTY INTERPROCEDURAL_OPTIMIZATION ${LTO_SUPPORTED})
 target_include_directories(alleg_dos PRIVATE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)

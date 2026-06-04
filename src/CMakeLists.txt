@@ -74,5 +74,6 @@ add_subdirectory(misc)
 
 add_library(alleg STATIC ${ALLEG_SRC} $<TARGET_OBJECTS:alleg_c> $<TARGET_OBJECTS:alleg_dos> $<TARGET_OBJECTS:alleg_i386> $<TARGET_OBJECTS:alleg_misc>)
 target_include_directories(alleg PUBLIC "${PROJECT_SOURCE_DIR}/include" PRIVATE "${PROJECT_SOURCE_DIR}")
+set_property(TARGET alleg PROPERTY INTERPROCEDURAL_OPTIMIZATION ${LTO_SUPPORTED})
 export(TARGETS alleg NAMESPACE allegro4::)
 add_library(allegro4::alleg ALIAS alleg)

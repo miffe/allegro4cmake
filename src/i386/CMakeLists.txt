@@ -25,4 +25,5 @@ set(ALLEG_I386_SRC
 )
 
 add_library(alleg_i386 OBJECT ${ALLEG_I386_SRC})
+set_property(TARGET alleg_i386 PROPERTY INTERPROCEDURAL_OPTIMIZATION ${LTO_SUPPORTED})
 target_include_directories(alleg_i386 PRIVATE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/include)
