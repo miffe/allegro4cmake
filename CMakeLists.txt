@@ -26,3 +26,8 @@ add_custom_command(
 add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
 
 add_subdirectory(src)
+
+if (PROJECT_IS_TOPLEVEL)
+    add_executable(testlink testlink.c)
+    target_link_libraries(testlink PRIVATE allegro4::alleg)
+endif()

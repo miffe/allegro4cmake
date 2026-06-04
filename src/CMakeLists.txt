@@ -76,6 +76,3 @@ add_library(alleg STATIC ${ALLEG_SRC} $<TARGET_OBJECTS:alleg_c> $<TARGET_OBJECTS
 target_include_directories(alleg PUBLIC "${PROJECT_SOURCE_DIR}/include" PRIVATE "${PROJECT_SOURCE_DIR}")
 export(TARGETS alleg NAMESPACE allegro4::)
 add_library(allegro4::alleg ALIAS alleg)
-
-add_executable(testlink testlink.c)
-target_link_libraries(testlink PRIVATE allegro4::alleg)
