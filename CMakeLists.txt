@@ -27,7 +27,7 @@ add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
 
 add_subdirectory(src)
 
-if (PROJECT_IS_TOPLEVEL)
+if (CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
     add_executable(testlink testlink.c)
     target_link_libraries(testlink PRIVATE allegro4::alleg)
 endif()
