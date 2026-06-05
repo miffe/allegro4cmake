@@ -5,7 +5,7 @@ set(ALLEG_C_SRC
     cblit8.c
     cblit.h
     ccpu.c
-    ccsprite.c
+    #ccsprite.c # Implemented in imisc.c
     cdefs15.h
     cdefs16.h
     cdefs24.h
@@ -18,7 +18,7 @@ set(ALLEG_C_SRC
     cgfx8.c
     cgfx.h
     cmisc.c
-    #cmiscs.s # Implemented in imisc.s, not sure which is best
+    #cmiscs.s # Implemented in imisc.s
     cscan15.c
     cscan16.c
     cscan24.c
