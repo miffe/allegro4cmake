@@ -13,6 +13,10 @@ endif()
 if(RELEASE_BUILD)
     include(CheckIPOSupported)
     check_ipo_supported(RESULT LTO_SUPPORTED)
+
+    # Silence all the visibility errors that you get with LTO
+    add_compile_options(-Wno-attributes)
+    add_link_options(-Wno-attributes)
 endif()
 
 # TODO: Generate the obj/djgpp/asmcapa.h file
